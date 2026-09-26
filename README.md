@@ -7,7 +7,7 @@ Plugins for [Adminer](https://www.adminer.org/) 6.0+ focused on foreign keys, an
 | [`foreign-tooltip.php`](foreign-tooltip.php) | Displays the referenced row in a tooltip when hovering a foreign key value in select, similar to phpPgAdmin. |
 | [`edit-foreign-search.php`](edit-foreign-search.php) | Selects a foreign key in the edit form from a searchable, paged list showing the data of the referenced rows. |
 
-The plugins use the `Adminer` namespace and the `Adminer\Plugin` base class. They need Adminer 6.0 or newer (`afterConnect()` and `is_blob()` are not in Adminer 5).
+The plugins use the `Adminer` namespace and the `Adminer\Plugin` base class. They need Adminer 6.0 or newer (`afterConnect()` and `is_blob()` are not in Adminer 5). They also need PHP 7.2 or newer, unlike Adminer itself which runs on PHP 5.3.
 
 ## Installation
 
