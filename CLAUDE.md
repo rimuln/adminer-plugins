@@ -29,5 +29,4 @@ Standalone plugins for [Adminer](https://www.adminer.org/) 6.0+ (foreign keys) p
 
 ## Repo notes
 
-- `navrh-pro-autora.md` is a local draft excluded via `.git/info/exclude`; don't commit it.
 - Deployment to the author's hosting is manual (they upload the files themselves).
