@@ -199,9 +199,8 @@ function post(combo, params) {
 			return JSON.parse(text);
 		} catch (e) {
 			// print whatever the server returned instead of JSON, e.g. a PHP error
-			const div = document.createElement('div');
-			div.innerHTML = text;
-			throw new Error('HTTP ' + response.status + ': ' + div.textContent.replace(/\\s+/g, ' ').trim().slice(0, 300));
+			const body = new DOMParser().parseFromString(text, 'text/html').body; // inert document, unlike innerHTML it doesn't load images
+			throw new Error('HTTP ' + response.status + ': ' + body.textContent.replace(/\\s+/g, ' ').trim().slice(0, 300));
 		}
 	}));
 }
