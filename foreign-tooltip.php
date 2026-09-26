@@ -54,7 +54,7 @@ class AdminerForeignTooltip extends Adminer\Plugin {
 				$target = $foreignKey["target"][0];
 				$columns = array();
 				foreach ($fields as $name => $field) {
-					if (!Adminer\is_blob($field) && count($columns) < $this->maxColumns) {
+					if ($name == $target || (!Adminer\is_blob($field) && count($columns) < $this->maxColumns)) { // the key pairs the rows with the values
 						$columns[] = Adminer\idf_escape($name);
 					}
 				}
