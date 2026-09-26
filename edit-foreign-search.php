@@ -49,7 +49,7 @@ class AdminerEditForeignSearch extends Adminer\Plugin {
 					$where[] = (Adminer\JUSH == "pgsql" ? "CAST($column AS text) ILIKE $pattern" : "$column LIKE $pattern");
 				}
 			}
-			$page = max(0, (int) $_POST["page"]);
+			$page = min(max(0, (int) $_POST["page"]), 1000000); // a huge page would overflow OFFSET to a float
 			$rows = Adminer\get_rows(Adminer\limit(
 				$from,
 				($where ? " WHERE " . implode(" OR ", $where) : "") . " ORDER BY " . ($labels ? "$labels[0], " : "") . $id,
