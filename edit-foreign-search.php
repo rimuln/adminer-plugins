@@ -184,7 +184,7 @@ class AdminerEditForeignSearch extends Adminer\Plugin {
 .fk-nav { display: flex; gap: 6px; align-items: center; justify-content: space-between; padding: 3px 6px; border-top: 1px solid #ccc; font-size: 90%; }
 .fk-nav button { cursor: pointer; }
 .fk-empty { padding: 3px 6px; font-style: italic; }
-</style>\n" . Adminer\script("(() => {
+</style>" . Adminer\script("(() => {
 const texts = $texts;
 const url = location.href;
 function post(combo, params) {
@@ -362,7 +362,7 @@ document.addEventListener('DOMContentLoaded', () => document.querySelectorAll('.
 		}).catch(error => message(list, error.message));
 	});
 }));
-})();");
+})();", ""); // the edit form preserves whitespace
 	}
 
 	protected $translations = array(
