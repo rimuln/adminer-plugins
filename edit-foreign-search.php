@@ -68,7 +68,7 @@ class AdminerEditForeignSearch extends Adminer\Plugin {
 	}
 
 	function editInput($table, $field, $attrs, $value) {
-		if (is_array($value) || !($foreignKey = $this->foreignKey($table, $field["field"]))) {
+		if ($table == "" || is_array($value) || !($foreignKey = $this->foreignKey($table, $field["field"]))) { // routine parameters have no table
 			return;
 		}
 		$label = "";
